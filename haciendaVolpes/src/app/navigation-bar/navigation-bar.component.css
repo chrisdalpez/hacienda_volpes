@@ -1,0 +1,21 @@
+.navigationBar-logo {
+    max-height: 50px;
+}
+
+.navigationBar {
+    padding: 15px;
+    background-color: #000000;
+}
+
+.navigationBar-solid {
+    background-color: #000000;
+}
+
+.navigationBar-routers {
+    float: right;
+
+}
+
+.example-spacer {
+    padding-left: 40px;
+}
