@@ -5,17 +5,25 @@
 .navigationBar {
     padding: 15px;
     background-color: #000000;
+    
 }
 
 .navigationBar-solid {
     background-color: #000000;
+    justify-content: space-between;
 }
 
 .navigationBar-routers {
     float: right;
-
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .example-spacer {
     padding-left: 40px;
+}
+
+.navigationBar-routers-div {
+    float: right;
+
 }

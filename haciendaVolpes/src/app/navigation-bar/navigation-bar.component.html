@@ -1,14 +1,14 @@
 <p class="navigationBar">
     <mat-toolbar class="navigationBar-solid">
-        <span>
+        <div>
             <img class="navigationBar-logo" src="../../assets/Hacienda Volpes Logo Website.png">
-        </span>
-        <span>WeBar</span>
+        </div>
         <span class="example-spacer"></span>
-        <h4 class="navigationBar-routers" routerLink="">The Lounge</h4>
-        <span class="example-spacer"></span>
-        <h4 class="navigationBar-routers" routerLink="">Cocktail List</h4>
-        <h4 class="navigationBar-routers" routerLink=""></h4>
+        <div class="navigationBar-routers-div">
+            <h4 class="navigationBar-routers" routerLink="/the-lounge">The Lounge</h4>
+            <h4 class="navigationBar-routers" routerLink="/drink-list">Drink List</h4>
+            <h4 class="navigationBar-routers" routerLink=""></h4>
+        </div>
        <!--<button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
             <mat-icon>favorite</mat-icon>
         </button>

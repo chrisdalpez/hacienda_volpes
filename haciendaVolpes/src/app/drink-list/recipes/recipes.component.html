@@ -1,0 +1,24 @@
+<div class="gridview-div-trending">
+    <h2 style="color: white;">Cocktails List</h2>
+    <mat-grid-list cols="5" rowHeight="1:1" [gutterSize]="'20px'">
+        <mat-grid-tile class="gridcard-drink" *ngFor="let recipe of recipes">
+            <div class="gridcard">
+                <mat-grid-tile-header>
+                    <h5>{{ recipe.name }}</h5>
+                </mat-grid-tile-header>
+                        <img [src]="recipe.imagePath">
+                <mat-grid-tile-footer class="gridcard-footer">
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip class="gridcard-chip" [ngStyle]="{ backgroundColor: recipe.categoryColor }"> {{ recipe.category }} </mat-chip>
+                    </mat-chip-list>
+                    <p class="gridcard-divider" style="margin-left: 0px"></p>
+                    <mat-icon class="gridcard-icons" aria-hidden="false" aria-label="Favorite icon" (click)="changeIcon('favorite')" (click)=" selectedColor = 'accent'" [color]="selectedColor" >{{ icon }}</mat-icon>
+                    <span class="card-span"></span>
+                    <mat-icon class="gridcard-icons" aria-hidden="false" aria-label="Share icon">share</mat-icon>
+                    <p class="gridcard-divider" style="margin-left: 20px"></p>
+                    <h5 class="text-card">Recipe</h5>
+                </mat-grid-tile-footer>
+            </div>
+        </mat-grid-tile>    
+    </mat-grid-list>
+</div>
