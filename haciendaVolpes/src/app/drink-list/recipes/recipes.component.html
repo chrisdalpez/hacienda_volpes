@@ -1,5 +1,16 @@
 <div class="gridview-div-trending">
-    <h2 style="color: white;">Cocktails List</h2>
+    <div class="container-header">
+        <div class="list-header">
+            <h2 style="color: white;">Cocktails List</h2>
+        </div>
+        <div class="searchbar">
+            <mat-form-field class="example-full-width">
+                <span matPrefix> </span>
+                <input type="tel" matInput placeholder="Search for drinks" name= "search">
+                <button matSuffix mat-button><mat-icon style="color: #dd8259;">search</mat-icon></button>
+                </mat-form-field>
+        </div>
+      </div>
     <mat-grid-list cols="5" rowHeight="1:1" [gutterSize]="'20px'">
         <mat-grid-tile class="gridcard-drink" *ngFor="let recipe of recipes">
             <div class="gridcard">
