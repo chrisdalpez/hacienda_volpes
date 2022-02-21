@@ -11,8 +11,11 @@ import { RecipesComponent } from './drink-list/recipes/recipes.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
-import { DrinkdialogComponent } from './drink-list/drinkdialog/drinkdialog.component';
+import { DrinkdialogComponent } from './drinkdialog/drinkdialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -34,6 +37,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatGridListModule,
     MatButtonModule,
     MatDialogModule,
+    MatInputModule,
+    FormsModule,
     
 
   ],

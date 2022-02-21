@@ -1,7 +1,7 @@
 <div class="gridview-div-trending">
     <div class="container-header">
         <div class="list-header">
-            <h2 style="color: white;">Cocktails List</h2>
+            <h1 class="drink-list-h1">Cocktails List</h1>
         </div>
         <div class="searchbar">
             <mat-form-field class="example-full-width">
@@ -9,6 +9,9 @@
                 <input type="tel" matInput placeholder="Search for drinks" name= "search">
                 <button matSuffix mat-button><mat-icon style="color: #dd8259;">search</mat-icon></button>
             </mat-form-field>
+            <button class="add-button" (click)="newDrink()" mat-button>
+                <mat-icon>add</mat-icon> Add Drink
+            </button>
         </div>
     </div>
 
@@ -18,14 +21,4 @@
         </mat-grid-tile>
     </mat-grid-list>  
     
-    <div class="content-wrapper">
-        <button (click)="newDrink()" mat-button>
-          <mat-icon>add</mat-icon> Add Drink
-        </button>
-      
-        <div class="container-wrapper">
-          <div class="container">
-            ...
-          </div>
-      </div>
 </div>

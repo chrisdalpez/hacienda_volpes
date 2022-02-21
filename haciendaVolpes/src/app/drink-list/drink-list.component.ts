@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipes/recipe.model';
 import { MatDialog } from '@angular/material/dialog';
+import { DrinkdialogComponent, DrinkDialogResult } from '../drinkdialog/drinkdialog.component';
 
 @Component({
   selector: 'app-drink-list',
@@ -48,23 +49,44 @@ export class DrinkListComponent implements OnInit {
   constructor(private dialog: MatDialog) { }
 
   //dialogbox to create a new cocktail
-  newTask(): void {
-    const dialogRef = this.dialog.open(DrinkDialogComponent, {
-      width: '270px',
+  newDrink(): void {
+    const dialogRef = this.dialog.open(DrinkdialogComponent, { //opens a new dialog window and drinkdialogcomponent
+      width: '270px', //dialog has a width of 270px
       data: {
-        task: {},
+        recipe: {}, //passes an empty recipe 
       },
     });
     dialogRef
       .afterClosed()
-      .subscribe((result: DrinkDialogResult|undefined) => {
+      .subscribe((result: DrinkDialogResult | undefined) => {
         if (!result) {
           return;
         }
-        this.recipes.push(result.task);
+        this.recipes.push(result.recipe); //subscribes the event and passes the new recipe to the recipes array
       });
   }
 
+  editDrink(list: Recipe, recipe: Recipe): void {
+    const dialogRef = this.dialog.open(DrinkdialogComponent, {
+      width: '270px',
+      data: {
+        recipe: {},
+        enableDelete: true,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: DrinkDialogResult | undefined) => {
+      if (!result) {
+        return;
+      }
+      const drinkList = this.recipes;
+      const recipeIndex = drinkList.indexOf(recipe)
+      if (result.delete) {
+        drinkList.splice(recipeIndex, 1);
+      } else {
+        drinkList[recipeIndex] = recipe;
+      }
+    });
+  }
 
   ngOnInit(): void {
   }

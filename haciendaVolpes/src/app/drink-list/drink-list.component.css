@@ -161,3 +161,19 @@ mat-grid-tile:hover {
   .button:active {
     top: 1px;
   }
+
+.add-button {
+    background-color: #207178;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 13px;
+    margin-left: 20px;
+}
+
+.drink-list-h1 {
+    padding-bottom: 20px;
+    color: white;
+    text-align: left;
+    font-size: 30px;
+}

@@ -1,0 +1,33 @@
+<img src="">
+<h3>Add a new recipe</h3>
+<mat-form-field>
+    <mat-label style="color: #b4b4b4">Title</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.recipe.name" /> <!--cdkFocusInitial automatically focus on recipe title when dialog is opened-->
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: #b4b4b4">Category</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.recipe.category" value="LongDrink, Cocktail, Martini or OldFashioned"/> 
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label style="color: #b4b4b4">Description</mat-label>
+    <input matInput cdkFocusInitial [(ngModel)]="data.recipe.description" /> <!--cdkFocusInitial automatically focus on recipe title when dialog is opened-->
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label style="color: #b4b4b4">Image</mat-label>
+    <input matInput [(ngModel)]="data.recipe.imagePath">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="{ recipe: data.recipe }">Save</button>
+    <button mat-button (click)="cancel()">Cancel</button>
+    <button mat-button
+      *ngIf="data.enableDelete"
+      color="primary"
+      aria-label="Delete"
+      [mat-dialog-close]="{ recipe: data.recipe, delete: true }">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>

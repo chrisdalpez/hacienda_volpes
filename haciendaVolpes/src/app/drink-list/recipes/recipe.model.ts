@@ -20,6 +20,7 @@ export class Recipe {
     }
 } */
 
+//interface of every recipe
 export interface Recipe {
     name: string; 
     description: string; 
