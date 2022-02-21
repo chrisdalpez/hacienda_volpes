@@ -1,2 +1,31 @@
+<div class="gridview-div-trending">
+    <div class="container-header">
+        <div class="list-header">
+            <h2 style="color: white;">Cocktails List</h2>
+        </div>
+        <div class="searchbar">
+            <mat-form-field class="example-full-width">
+                <span matPrefix> </span>
+                <input type="tel" matInput placeholder="Search for drinks" name= "search">
+                <button matSuffix mat-button><mat-icon style="color: #dd8259;">search</mat-icon></button>
+            </mat-form-field>
+        </div>
+    </div>
 
-<app-recipes></app-recipes>
+    <mat-grid-list cols="5" rowHeight="1:1" [gutterSize]="'20px'">
+        <mat-grid-tile *ngFor="let recipe of recipes">
+            <app-recipes [recipe]="recipe"></app-recipes>
+        </mat-grid-tile>
+    </mat-grid-list>  
+    
+    <div class="content-wrapper">
+        <button (click)="newDrink()" mat-button>
+          <mat-icon>add</mat-icon> Add Drink
+        </button>
+      
+        <div class="container-wrapper">
+          <div class="container">
+            ...
+          </div>
+      </div>
+</div>

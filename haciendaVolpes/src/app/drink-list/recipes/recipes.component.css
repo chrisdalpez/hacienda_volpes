@@ -20,11 +20,6 @@
 }
   
 
-
-
-
-
-
 .container {
     display: grid; 
     grid-auto-columns: 1fr; 
@@ -44,6 +39,7 @@
     }
   .drink-grid { 
       grid-area: drink-grid; 
+
     }
 
 .mat-card-drink {
@@ -76,8 +72,10 @@ mat-grid-tile:hover {
     padding-bottom: 40px;    
 }
 
-.gridcard {
+.gridcard-drink {
     min-height: 100%;
+    max-width: 200px;
+    
 }
 
 .gridcard-footer {

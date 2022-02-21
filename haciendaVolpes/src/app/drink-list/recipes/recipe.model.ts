@@ -1,3 +1,5 @@
+
+/*
 export class Recipe {
     public name: string; 
     public description: string; 
@@ -16,5 +18,15 @@ export class Recipe {
         this.saved = saved; 
         this.imagePath = imagePath;
     }
+} */
+
+export interface Recipe {
+    name: string; 
+    description: string; 
+    category: string; 
+    categoryColor: string;
+    likes: number; 
+    saved: boolean;
+    imagePath: string;
 }
 

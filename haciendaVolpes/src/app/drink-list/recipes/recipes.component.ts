@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material/paginator';
 import { Recipe } from './recipe.model';
+import { Input, Output, EventEmitter } from '@angular/core'; 
+
 
 @Component({
   selector: 'app-recipes',
@@ -16,6 +17,10 @@ export class RecipesComponent implements OnInit {
     this.icon = newIcon; 
   }
 
+  @Input() recipe: Recipe | null = null;
+  @Output() edit = new EventEmitter<Recipe>();
+
+/*
   public recipes: Recipe[] = [
     new Recipe('Blue Lagoon', 'Tasty blue lagoon', 'Longdrink', '#c1e45b', 0, false, 'https://primochef.it/wp-content/uploads/2021/06/SH_cocktail_blue_lagoon-640x350.jpg',),
     new Recipe('Caipiroska', 'Tasty Caipiroska', 'Cocktail', '#ffbe29', 0, false, 'https://www.bazery.com/wp-content/uploads/2021/10/1490620884092-1.jpg'),
@@ -26,16 +31,7 @@ export class RecipesComponent implements OnInit {
     new Recipe('Grasshoper', '', 'Martini', '#9cf1e3', 0, false, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRnS5UMhNy5ixkPdQpB8kYqesd6AFybqNx4Q&usqp=CAU' ),
  
   ]; 
-
-  pagedList: Recipe[] = [];
-  breakpoint: number = 5;
-  length: number = 0; 
-  pageSizeOptions: number[] = [5, 10, 15, 20, 25]
-  pageSize: any;
-  pageEvent: any;
-  event: any;
-
-
+  */
 
 
   constructor() { }
