@@ -9,8 +9,11 @@ import { DrinkListComponent } from './drink-list/drink-list.component';
 import { TheLoungeComponent } from './the-lounge/the-lounge.component';
 import { RecipesComponent } from './drink-list/recipes/recipes.component';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { DrinkListService } from './drink-list/drink-list.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MatButtonModule } from '@angular/material/button';
+import { DrinkdialogComponent } from './drink-list/drinkdialog/drinkdialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DrinkListComponent,
     TheLoungeComponent,
     RecipesComponent,
+    DrinkdialogComponent,
+
 
   ],
   imports: [
@@ -27,10 +32,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MaterialModule,
     MatGridListModule,
+    MatButtonModule,
+    MatDialogModule,
     
 
   ],
-  providers: [DrinkListService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
