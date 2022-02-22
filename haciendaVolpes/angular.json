@@ -100,6 +100,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "haciendaVolpes:build:production",
+            "firebaseProject": "haciendavolpes-angular-app",
+            "firebaseHostingSite": "haciendavolpes-angular-app"
+          }
         }
       }
     }

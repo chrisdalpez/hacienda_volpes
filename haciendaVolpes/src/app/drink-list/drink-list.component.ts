@@ -8,6 +8,7 @@ import { DrinkdialogComponent, DrinkDialogResult } from '../drinkdialog/drinkdia
   templateUrl: './drink-list.component.html',
   styleUrls: ['./drink-list.component.css']
 })
+
 export class DrinkListComponent implements OnInit {
 
     /*
@@ -23,9 +24,11 @@ export class DrinkListComponent implements OnInit {
   ]; 
   */
 
+  id: number = 0;
   
   recipes: Recipe[] = [
     {
+      id: 1,
       name:'Blue Lagoon',
       description:'Tasty blue lagoon',
       category: 'Longdrink',
@@ -35,6 +38,7 @@ export class DrinkListComponent implements OnInit {
       imagePath: 'https://primochef.it/wp-content/uploads/2021/06/SH_cocktail_blue_lagoon-640x350.jpg',
     },
     {
+      id: 2,
       name:'Caipiroska',
       description:'Tasty Caipiroska',
       category: 'Cocktail',
@@ -53,7 +57,9 @@ export class DrinkListComponent implements OnInit {
     const dialogRef = this.dialog.open(DrinkdialogComponent, { //opens a new dialog window and drinkdialogcomponent
       width: '270px', //dialog has a width of 270px
       data: {
-        recipe: {}, //passes an empty recipe 
+        recipe: {
+          id: this.recipes.length + 1, //id comes from a sum between the recipes array lenght + 1
+        }, //passes an empty recipe 
       },
     });
     dialogRef
@@ -66,11 +72,14 @@ export class DrinkListComponent implements OnInit {
       });
   }
 
-  editDrink(list: Recipe, recipe: Recipe): void {
+  editDrink(recipe: Recipe): void {
     const dialogRef = this.dialog.open(DrinkdialogComponent, {
       width: '270px',
       data: {
-        recipe: {},
+        recipe: {
+          id: recipe.id,
+
+        },
         enableDelete: true,
       },
     });
@@ -78,13 +87,9 @@ export class DrinkListComponent implements OnInit {
       if (!result) {
         return;
       }
-      const drinkList = this.recipes;
-      const recipeIndex = drinkList.indexOf(recipe)
-      if (result.delete) {
-        drinkList.splice(recipeIndex, 1);
-      } else {
-        drinkList[recipeIndex] = recipe;
-      }
+
+      const index = this.recipes.indexOf(recipe)
+      this.recipes[index] = result.recipe;
     });
   }
 

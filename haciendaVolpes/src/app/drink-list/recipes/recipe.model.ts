@@ -22,6 +22,7 @@ export class Recipe {
 
 //interface of every recipe
 export interface Recipe {
+    id: number;
     name: string; 
     description: string; 
     category: string; 

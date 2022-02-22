@@ -10,7 +10,10 @@ import { Recipe } from '../drink-list/recipes/recipe.model';
 })
 export class DrinkdialogComponent implements OnInit {
 
-  private backupRecipe: Partial<Recipe> = { ...this.data.recipe }; // backup recipe is a copy of the recipe passed in the data object.
+
+
+
+  backupRecipe: Partial<Recipe> = { ...this.data.recipe }; // backup recipe is a copy of the recipe passed in the data object.
 
   constructor(
     public dialogRef: MatDialogRef<DrinkdialogComponent>,
@@ -24,7 +27,8 @@ export class DrinkdialogComponent implements OnInit {
     this.data.imagePath = this.backupRecipe.imagePath;
     this.data.recipe.description = this.backupRecipe.description;
     this.data.recipe.category = this.backupRecipe.category;
-    this.dialogRef.close(this.data.recipe); //closes the dialog and custom recipe is discared
+    this.data.recipe.id = this.backupRecipe.id;
+    this.dialogRef.close(this.data); //closes the dialog and custom recipe is discared
   }
 
   ngOnInit(): void {
@@ -33,7 +37,7 @@ export class DrinkdialogComponent implements OnInit {
 
 export interface DrinkdialogData {
   imagePath: string | undefined;
-  recipe: Partial<Recipe>;
+  recipe: Partial<Recipe>; 
   enableDelete: boolean;
 }
 

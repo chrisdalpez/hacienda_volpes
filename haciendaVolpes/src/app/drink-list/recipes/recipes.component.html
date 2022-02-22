@@ -20,6 +20,7 @@
     <div class="gridcard" *ngIf="recipe" (dblclick)="edit.emit(recipe)">
         <mat-grid-tile-header>
             <h5>{{ recipe.name }}</h5>
+            <h5>{{ recipe.id }}</h5>
         </mat-grid-tile-header>
                 <img [src]="recipe.imagePath">
         <mat-grid-tile-footer class="gridcard-footer">

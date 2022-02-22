@@ -3,6 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    projectId: 'haciendavolpes-angular-app',
+    appId: '1:495752872044:web:6423669d88297d73eb5849',
+    databaseURL: 'https://haciendavolpes-angular-app-default-rtdb.europe-west1.firebasedatabase.app',
+    storageBucket: 'haciendavolpes-angular-app.appspot.com',
+    locationId: 'europe-west',
+    apiKey: 'AIzaSyDlmwB7cQVJDmIVrom1rbnXPws3M3YbbkA',
+    authDomain: 'haciendavolpes-angular-app.firebaseapp.com',
+    messagingSenderId: '495752872044',
+    measurementId: 'G-0QJVNGEV5K',
+  },
   production: false
 };
 
@@ -14,3 +25,15 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDlmwB7cQVJDmIVrom1rbnXPws3M3YbbkA",
+  authDomain: "haciendavolpes-angular-app.firebaseapp.com",
+  databaseURL: "https://haciendavolpes-angular-app-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "haciendavolpes-angular-app",
+  storageBucket: "haciendavolpes-angular-app.appspot.com",
+  messagingSenderId: "495752872044",
+  appId: "1:495752872044:web:6423669d88297d73eb5849",
+  measurementId: "G-0QJVNGEV5K"
+};
+

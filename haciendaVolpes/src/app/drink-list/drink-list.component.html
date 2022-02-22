@@ -16,7 +16,7 @@
     </div>
 
     <mat-grid-list cols="5" rowHeight="1:1" [gutterSize]="'20px'">
-        <mat-grid-tile *ngFor="let recipe of recipes">
+        <mat-grid-tile *ngFor="let recipe of recipes" (click)="editDrink(recipe)">
             <app-recipes [recipe]="recipe"></app-recipes>
         </mat-grid-tile>
     </mat-grid-list>  
