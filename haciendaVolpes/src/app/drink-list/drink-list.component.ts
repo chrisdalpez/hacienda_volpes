@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from './recipes/recipe.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DrinkdialogComponent, DrinkDialogResult } from '../drinkdialog/drinkdialog.component';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-drink-list',
@@ -50,7 +52,7 @@ export class DrinkListComponent implements OnInit {
 
   ];
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,) { }
 
   //dialogbox to create a new cocktail
   newDrink(): void {
@@ -76,9 +78,12 @@ export class DrinkListComponent implements OnInit {
     const dialogRef = this.dialog.open(DrinkdialogComponent, {
       width: '270px',
       data: {
-        recipe: {
+        recipe: { //only in editdrink recipe holds variables with already assigned values (from the creation of the recipe)
           id: recipe.id,
-
+          name: recipe.name,
+          description: recipe.description,
+          imagePath: recipe.imagePath,
+          category: recipe.category,
         },
         enableDelete: true,
       },
@@ -87,7 +92,6 @@ export class DrinkListComponent implements OnInit {
       if (!result) {
         return;
       }
-
       const index = this.recipes.indexOf(recipe)
       this.recipes[index] = result.recipe;
     });

@@ -64,7 +64,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 
   ],
   providers: [
-    ScreenTrackingService,UserTrackingService
+    ScreenTrackingService,UserTrackingService, DrinkListComponent, RecipesComponent,
   ],
   bootstrap: [AppComponent]
 })
